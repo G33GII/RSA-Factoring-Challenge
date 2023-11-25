@@ -2,6 +2,7 @@
 """A script to find the smallest divisor of integers from a file."""
 
 import sys
+import time
 
 def main():
     """Main function to find divisors."""
@@ -31,4 +32,9 @@ def find_divisor(INT=0):
     return x
 
 if __name__ == "__main__":
+    start = time.time()
     main()
+    end = time.time()
+    elapsed = end - start
+    print()
+    print(f"real    0m{elapsed:.3f}s")
