@@ -32,10 +32,11 @@ if __name__ == "__main__":
         with open(sys.argv[1], 'r') as file:  # Read each line in the file
 
             for line in file:
-                INT = int(line)   # Convert the line to an integer
+                INT = int(line.strip())   # Convert the line to an integer
                 _div = find_divisor(INT)  # Returns: (_div, _div // x) - tuple
                 print("{}={}*{}".format(INT, _div[1], _div[0]))
     except FileNotFoundError:
+        print("File Not FOund")
         sys.exit(2)
 
     if time.time() - start > 5:
