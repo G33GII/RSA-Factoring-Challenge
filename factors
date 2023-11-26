@@ -11,7 +11,7 @@ def find_divisor(INT=0):
     Args:
         INT: integer input
     """
-    for  x in range(2, INT):
+    for x in range(2, INT):
         if INT % x == 0:
             return x, INT // x
     return None
@@ -32,9 +32,9 @@ if __name__ == "__main__":
         with open(sys.argv[1], 'r') as file:  # Read each line in the file
 
             for line in file:
-                INT = int(line)     # Convert the line to an integer
-                _div = find_divisor(INT)    # Find the smallest divisor of the integer
-                print("{}={}*{}".format(INT, _div[1], _div[0]))    # Print the result
+                INT = int(line)   # Convert the line to an integer
+                _div = find_divisor(INT)  # Returns: (_div, _div // x) - tuple
+                print("{}={}*{}".format(INT, _div[1], _div[0]))
     except FileNotFoundError:
         sys.exit(2)
 
